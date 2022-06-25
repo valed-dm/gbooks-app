@@ -1,0 +1,210 @@
+#back:hover {
+  color: DarkSlateGrey;
+  cursor: pointer;
+}
+.app {
+  padding-top: 10px;
+  text-align: center;
+}
+.app-body {
+  background-color: rgba(128, 128, 128, 0.5);
+  font-size: 0.8em;
+  margin: 0 auto;
+  max-width: 1000px;
+  min-height: calc(100vh - 280px);
+  padding: 10px 0px;
+}
+.app-header {
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.5);
+  background-image: url("/public/header_back.webp");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+  height: 270px;
+  justify-content: center;
+  margin: 0px auto 5px auto;
+  max-width: 1000px;
+}
+.arrow {
+  position: absolute;
+  top: 8px;
+}
+.book-image {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;
+  height: 150px;
+  margin: 5px 0px;
+  width: auto;
+}
+.book-search {
+  border: 1px solid white;
+  color: white;
+  font-size: .7em;
+  margin: 10px 90px;
+  padding-left: 20px;
+}
+.book-search-data {
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
+}
+.book-search-mobile {
+  border: 1px solid white;
+  color: white;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 80vw;
+}
+.book-search-params {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.column {
+  align-items: center;
+  background-color: rgba(248, 248, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px DarkSlateGrey;
+  color: LightSlateGray;
+  display: flex;
+  flex: 0 0 18%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+  min-height: auto;
+  padding-bottom: 10px;
+  width: 140px;
+}
+.column:hover {
+  cursor: pointer;
+}
+.dropdown {
+  margin: 0px 40px 10px 10px;
+}
+.faIcon {
+  margin: 0px 10px;
+}
+.faIcon:hover {
+  cursor: pointer;
+}
+.fa-search {
+  background: none;
+  margin-left: 5px;
+}
+.fa-search:hover {
+  color: DarkSlateGrey;
+  cursor: pointer;
+}
+.header-mobile {
+  align-items: space-between;
+  color: white;
+  display: flex;
+  height: 25px;
+}
+.mobile-data {
+  color: white;
+  font-size: 0.3em;
+  font-style: italic;
+  margin: 0px 5px 5px 5px;
+  margin-left: 20px;
+  text-align: center;
+}
+.modal-menu {
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 5px;
+  left: 50%;
+  min-width: 150px;
+  padding: 1em 1em 1em 1em;
+  position: fixed;
+  top: 20em;
+  transform: translate(-50%);
+  z-index: 1000;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  max-width: 1000px;
+  min-width: 280px;
+}
+.select-style {
+  font-size: 0.7em;
+  line-height: 0.25em;
+  text-align: left;
+  width: 10em;
+}
+@media (max-width: 1000px) {
+  .column {
+    flex: 0 0 20%;
+  }
+}
+@media (max-width: 768px) {
+  .column {
+    flex: 0 0 25%;
+  }
+}
+@media (max-width: 650px) {
+  .column {
+    flex: 0 0 31%;
+  }
+}
+@media (max-width: 480px) {
+  .column {
+    flex: 0 0 42%;
+  }
+}
+@media (max-width: 300px) {
+  .column {
+    flex: 0 0 60%;
+  }
+}
+article {
+  font-style: italic;
+  padding: 15px;
+  text-align: justify;
+  text-indent: 10px;
+}
+body {
+  background-color: DarkSlateGrey;
+}
+button:disabled {
+  cursor: auto;
+}
+button:hover {
+  cursor: pointer;
+}
+h1 {
+  color: white;
+  font-size: 1.2em;
+  margin: 0px;
+}
+h2 {
+  color: white;
+  margin: 0px;
+}
+input {
+  font-size: 0.75em;
+  width: 13em;
+}
+input:focus {
+  outline: none;
+}
+label {
+  font-size: 0.8em;
+}
+p {
+  margin: 0px;
+}
+ul {
+  list-style: none;
+  margin: 3px;
+}
