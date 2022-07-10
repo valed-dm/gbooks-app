@@ -9,7 +9,6 @@ const LoadMoreMobile: FC = () => {
   return (
     <div className="mobile-data">
       <span>title: "{reqData.title}";</span>&nbsp;
-      <br />
       <span>cat: "{reqData.catVal.label}";</span>&nbsp;
       <span>order: "{reqData.relVal.label}";</span>
       <br />

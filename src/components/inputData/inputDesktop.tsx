@@ -9,21 +9,21 @@ const InputDesktop = () => {
       <form>
         <div className="book-search">
           <div>
-            <label>book title</label>
+            <span>Book title</span>
             <br />
             <TitleInput />
           </div>
           <div className="book-search-params">
             <div className="dropdown" id="category">
-              <label>category</label>
+              <span>category</span>
               <CatSelect />
             </div>
             <div className="dropdown" id="ranged">
-              <label>ranged by</label>
+              <span>ranged by</span>
               <RelSelect />
             </div>
             <div className="dropdown" id="pug">
-              <label>search pace</label>
+              <span>search pace</span>
               <SearchPace />
             </div>
           </div>

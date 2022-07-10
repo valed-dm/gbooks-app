@@ -25,7 +25,7 @@ const rootReducer = (state: any, action: any) => {
 
 const store = configureStore({
   reducer: rootReducer,
-  /* example:
+  /* example: gDM stands for getDefaultMiddleware;
   preloadedState: initialState,
   middleware: (gDM) =>
     gDM({

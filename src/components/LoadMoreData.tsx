@@ -67,7 +67,7 @@ const LoadMoreData: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startExtraSearch]);
 
-  if (width > 768) {
+  if (width > 770) {
     return (
       <div className="book-search">
         <LoadMoreDesktop />

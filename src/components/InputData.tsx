@@ -51,7 +51,7 @@ const InputData: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [startSearch]);
 
-  if (width > 750) {
+  if (width > 550) {
     // iPad Mini case (768x1024);
     return <InputDesktop />;
   } else {

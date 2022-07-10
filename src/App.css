@@ -10,7 +10,7 @@
   background-color: rgba(128, 128, 128, 0.5);
   font-size: 0.8em;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 900px;
   min-height: calc(100vh - 280px);
   padding: 10px 0px;
 }
@@ -27,7 +27,7 @@
   height: 270px;
   justify-content: center;
   margin: 0px auto 5px auto;
-  max-width: 1000px;
+  max-width: 900px;
 }
 .arrow {
   position: absolute;
@@ -44,15 +44,17 @@
 .book-search {
   border: 1px solid white;
   color: white;
-  font-size: .7em;
-  margin: 10px 90px;
+  font-size: 0.7em;
+  margin: 10px;
   padding-left: 20px;
 }
 .book-search-data {
   border: 1px solid white;
   display: flex;
+  font-weight: 500;
   justify-content: space-around;
   margin-right: 20px;
+  padding: 3px;
 }
 .book-search-mobile {
   border: 1px solid white;
@@ -86,7 +88,7 @@
   cursor: pointer;
 }
 .dropdown {
-  margin: 0px 40px 10px 10px;
+  margin: 0px 0px 10px 20px;
 }
 .faIcon {
   margin: 0px 10px;
@@ -110,8 +112,8 @@
 }
 .mobile-data {
   color: white;
+  font-family: arial, sans-serif;
   font-size: 0.3em;
-  font-style: italic;
   margin: 0px 5px 5px 5px;
   margin-left: 20px;
   text-align: center;
@@ -147,14 +149,22 @@
     flex: 0 0 20%;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 770px) {
   .column {
     flex: 0 0 25%;
+  }
+  .select-style {
+    width: 15em;
   }
 }
 @media (max-width: 650px) {
   .column {
     flex: 0 0 31%;
+  }
+}
+@media (max-width: 550px) {
+  .select-style {
+    width: 9em;
   }
 }
 @media (max-width: 480px) {
@@ -198,11 +208,12 @@ input {
 input:focus {
   outline: none;
 }
-label {
-  font-size: 0.8em;
-}
 p {
   margin: 0px;
+}
+span {
+  font-weight: bold;
+  font-size: 0.9em;
 }
 ul {
   list-style: none;

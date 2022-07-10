@@ -26,7 +26,11 @@ export const getBooks = async (
       reduxDispatch(srchCtl.actions.setLoadingData(false));
       return getData(response);
     } catch (err) {
-      console.log("axios err", err);
+      if (axios.isAxiosError(err)) {
+        console.log("axios error message: ", err.message);
+      } else {
+        console.log("unexpected error: ", err);
+      }
     }
   }
 };

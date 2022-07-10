@@ -12,25 +12,25 @@ const InputMobile: FC<{ width: number }> = ({ width }) => {
         <table style={{ textAlign: "right" }}>
           <tbody>
             <tr>
-              <td>book title:&nbsp;</td>
+              <td><span>Book title:</span>&nbsp;</td>
               <td className="mobile-search">
                 <TitleInput />
               </td>
             </tr>
             <tr>
-              <td>category:&nbsp;</td>
+              <td><span>Category:</span>&nbsp;</td>
               <td>
                 <CatSelect />
               </td>
             </tr>
             <tr>
-              <td>ranged by:&nbsp;</td>
+              <td><span>Ranged by:</span>&nbsp;</td>
               <td>
                 <RelSelect />
               </td>
             </tr>
             <tr>
-              <td>search pace:&nbsp;</td>
+              <td><span>Search pace:</span>&nbsp;</td>
               <td>
                 <SearchPace />
               </td>
