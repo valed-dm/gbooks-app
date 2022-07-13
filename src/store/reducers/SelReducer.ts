@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = 0;
+
 export const selData = createSlice({
   name: "selData",
-  initialState: 0 as number,
+  initialState,
   reducers: {
     setSelData: (state, action) => {
       return action.payload;

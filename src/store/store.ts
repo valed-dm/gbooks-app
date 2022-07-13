@@ -1,4 +1,8 @@
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import {
+  combineReducers,
+  configureStore,
+  PreloadedState,
+} from "@reduxjs/toolkit";
 import { initialState } from "../helpers/defaultData";
 import { srchCtl } from "./reducers/srchCtlReducer";
 import { selData } from "./reducers/SelReducer";
@@ -16,25 +20,28 @@ const appReducers = combineReducers({
   sortData: sortData.reducer, // qty of books after all sorting;
   inputData: inputData.reducer, // current input/selectors data;
 });
-const rootReducer = (state: any, action: any) => {
+
+export const rootReducer = (state: any, action: any) => {
   if (action.type === "RESET_STORE") {
     state = initialState;
   }
   return appReducers(state, action);
 };
 
-const store = configureStore({
-  reducer: rootReducer,
-  /* example: gDM stands for getDefaultMiddleware;
-  preloadedState: initialState,
-  middleware: (gDM) =>
+export function setupStore(preloadedState?: PreloadedState<RootState>) {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+    /* example: gDM stands for getDefaultMiddleware;
+    middleware: (gDM) =>
     gDM({
       serializableCheck: false,
     }).concat(thunk),
-  */
-  devTools: process.env.NODE_ENV !== "production",
-});
+    */
+    devTools: process.env.NODE_ENV !== "production",
+  });
+}
 
-export type AppState = ReturnType<typeof rootReducer>;
-
-export default store;
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];

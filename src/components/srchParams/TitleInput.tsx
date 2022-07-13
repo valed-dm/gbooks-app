@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useNavigate } from "react-router-dom";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import { AppState } from "../../store/configureStore";
+import { RootState } from "../../store/store";
 import { inputData } from "../../store/reducers/InputReducer";
 import { srchCtl } from "../../store/reducers/srchCtlReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,13 +10,13 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const TitleInput: FC = () => {
   const navigate = useNavigate();
-  const reduxDispatch = useDispatch();
+  const reduxDispatch = useAppDispatch();
   const { width } = useWindowDimensions();
-  const { title } = useSelector((state: AppState) => state.inputData);
-  const { allowSearch, loadingData } = useSelector(
-    (state: AppState) => state.srchCtl
+  const { title } = useAppSelector((state: RootState) => state.inputData);
+  const { allowSearch, loadingData } = useAppSelector(
+    (state: RootState) => state.srchCtl
   );
-  const selData = useSelector((state: AppState) => state.selData);
+  const selData = useAppSelector((state: RootState) => state.selData);
 
   const userInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     navigate("/");
@@ -55,6 +55,7 @@ const TitleInput: FC = () => {
         />
         {allowSearch && width > 300 ? (
           <FontAwesomeIcon
+            data-testid="faSearch"
             icon={faSearch}
             onClick={runSearch}
             className="fa-search"

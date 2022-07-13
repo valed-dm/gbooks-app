@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { AppState } from "../store/configureStore";
+import { RootState } from "../store/store";
 import { initialState } from "../helpers/defaultData";
 import { inputData } from "../store/reducers/InputReducer";
 import { selData } from "../store/reducers/SelReducer";
@@ -14,15 +14,15 @@ import InputDesktop from "./inputData/inputDesktop";
 import InputMobile from "./inputData/inputMobile";
 
 const InputData: FC = () => {
-  const reduxDispatch = useDispatch();
+  const reduxDispatch = useAppDispatch();
   const { width } = useWindowDimensions();
-  const { allowSearch, startSearch } = useSelector(
-    (state: AppState) => state.srchCtl
+  const { allowSearch, startSearch } = useAppSelector(
+    (state: RootState) => state.srchCtl
   );
-  const { title, catVal, relVal, searchPace } = useSelector(
-    (state: AppState) => state.inputData
+  const { title, catVal, relVal, searchPace } = useAppSelector(
+    (state: RootState) => state.inputData
   );
-  const selected = useSelector((state: AppState) => state.selData);
+  const selected = useAppSelector((state: RootState) => state.selData);
 
   useEffect(() => {
     async function fetchBooks() {

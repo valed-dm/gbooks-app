@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { useSelector } from "react-redux";
-import { AppState } from "../../store/configureStore";
+import { useAppSelector } from "../../hooks/reduxHooks";
+import { RootState } from "../../store/store";
 
 const LoadMoreDesktop: FC = () => {
-  const reqData = useSelector((state: AppState) => state.reqData);
-  const resData = useSelector((state: AppState) => state.resData);
-  const selected = useSelector((state: AppState) => state.selData);
-  const sortData = useSelector((state: AppState) => state.sortData);
+  const reqData = useAppSelector((state: RootState) => state.reqData);
+  const resData = useAppSelector((state: RootState) => state.resData);
+  const selected = useAppSelector((state: RootState) => state.selData);
+  const sortData = useAppSelector((state: RootState) => state.sortData);
 
   return (
     <div style={{ marginTop: "5px" }}>

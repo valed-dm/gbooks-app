@@ -1,13 +1,13 @@
 import React, { FC } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useNavigate } from "react-router-dom";
-import { AppState } from "../../store/configureStore";
+import { RootState } from "../../store/store";
 import { srchCtl } from "../../store/reducers/srchCtlReducer";
 
 const SubmitBtn: FC = () => {
   const navigate = useNavigate();
-  const reduxDispatch = useDispatch();
-  const { allowSearch } = useSelector((state: AppState) => state.srchCtl);
+  const reduxDispatch = useAppDispatch();
+  const { allowSearch } = useAppSelector((state: RootState) => state.srchCtl);
 
   const runSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();

@@ -1,17 +1,17 @@
 import React, { FC } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useNavigate } from "react-router-dom";
-import { AppState } from "../../store/configureStore";
+import { RootState } from "../../store/store";
 import { srchCtl } from "../../store/reducers/srchCtlReducer";
 
 const ExtraBtn: FC = () => {
   const navigate = useNavigate();
-  const reduxDispatch = useDispatch();
-  const { allowExtraSearch, loadingData } = useSelector(
-    (state: AppState) => state.srchCtl
+  const reduxDispatch = useAppDispatch();
+  const { allowExtraSearch, loadingData } = useAppSelector(
+    (state: RootState) => state.srchCtl
   );
-  const resData = useSelector((state: AppState) => state.resData);
-  const reqData = useSelector((state: AppState) => state.reqData);
+  const resData = useAppSelector((state: RootState) => state.resData);
+  const reqData = useAppSelector((state: RootState) => state.reqData);
 
   const runExtraSearch = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>

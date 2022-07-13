@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  allowSearch: false,
+  startSearch: false,
+  allowExtraSearch: false,
+  startExtraSearch: false,
+  loadingData: false,
+};
+
 export const srchCtl = createSlice({
   name: "srchCtl",
-  initialState: {
-    allowSearch: false,
-    startSearch: false,
-    allowExtraSearch: false,
-    startExtraSearch: false,
-    loadingData: false,
-  },
+  initialState,
   reducers: {
     setInitialState: (state, action) => {
       return action.payload;

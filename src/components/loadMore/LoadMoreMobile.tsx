@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { useSelector } from "react-redux";
-import { AppState } from "../../store/configureStore";
+import { useAppSelector } from "../../hooks/reduxHooks";
+import { RootState } from "../../store/store";
 
 const LoadMoreMobile: FC = () => {
-  const reqData = useSelector((state: AppState) => state.reqData);
-  const resData = useSelector((state: AppState) => state.resData);
-  const selected = useSelector((state: AppState) => state.selData);
+  const reqData = useAppSelector((state: RootState) => state.reqData);
+  const resData = useAppSelector((state: RootState) => state.resData);
+  const selected = useAppSelector((state: RootState) => state.selData);
   return (
     <div className="mobile-data">
       <span>title: "{reqData.title}";</span>&nbsp;

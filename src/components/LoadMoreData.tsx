@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { AppState } from "../store/configureStore";
+import { RootState } from "../store/store";
 import { ResData } from "../models/ResData";
 import { getBooks } from "../getAPIData/getBooks";
 import { srchCtl } from "../store/reducers/srchCtlReducer";
@@ -13,13 +13,13 @@ import LoadMoreMobile from "./loadMore/LoadMoreMobile";
 
 const LoadMoreData: FC = () => {
   const { width } = useWindowDimensions();
-  const { allowExtraSearch, startExtraSearch } = useSelector(
-    (state: AppState) => state.srchCtl
+  const { allowExtraSearch, startExtraSearch } = useAppSelector(
+    (state: RootState) => state.srchCtl
   );
-  const reqData = useSelector((state: AppState) => state.reqData);
-  const responseData = useSelector((state: AppState) => state.resData);
-  const selectedData = useSelector((state: AppState) => state.selData);
-  const reduxDispatch = useDispatch();
+  const reqData = useAppSelector((state: RootState) => state.reqData);
+  const responseData = useAppSelector((state: RootState) => state.resData);
+  const selectedData = useAppSelector((state: RootState) => state.selData);
+  const reduxDispatch = useAppDispatch();
 
   useEffect(() => {
     async function fetchExtraBooks() {

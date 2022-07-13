@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { cat, rel } from "../../helpers/defaultData";
 
+const initialState = {
+  title: "",
+  catVal: cat[0],
+  relVal: rel[0],
+  searchPace: "20",
+};
+
 export const inputData = createSlice({
   name: "inputData",
-  initialState: {
-    title: "",
-    catVal: cat[0],
-    relVal: rel[0],
-    searchPace: "20",
-  },
+  initialState,
   reducers: {
     setInitialState: (state, action) => {
       return action.payload;

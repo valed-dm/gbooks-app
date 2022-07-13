@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "../../store/configureStore";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
+import { RootState } from "../../store/store";
 import { key, rel } from "../../helpers/defaultData";
 import { inputData } from "../../store/reducers/InputReducer";
 import Dropdown, { Option } from "react-dropdown";
@@ -8,9 +8,9 @@ import OutsideClickHandler from "react-outside-click-handler";
 import "react-dropdown/style.css";
 
 const RelSelect: FC = () => {
-  const reduxDispatch = useDispatch();
-  const { allowExtraSearch } = useSelector((state: AppState) => state.srchCtl);
-  const { relVal } = useSelector((state: AppState) => state.inputData);
+  const reduxDispatch = useAppDispatch();
+  const { allowExtraSearch } = useAppSelector((state: RootState) => state.srchCtl);
+  const { relVal } = useAppSelector((state: RootState) => state.inputData);
   const [relKey, setRelKey] = useState("0"); //makes dropdown close by its key change
 
   const relOnChange = (selected: Option) => {

@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppState } from "../store/configureStore";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
+import { RootState } from "../store/store";
 import { sort } from "../helpers/sorting";
 import BookCard from "./BookCard";
 import { sortData } from "../store/reducers/SortReducer";
@@ -13,10 +13,10 @@ const Loading = () => {
 };
 
 const Books: FC = () => {
-  const reduxDispatch = useDispatch();
-  const reqData = useSelector((state: AppState) => state.reqData);
-  const resData = useSelector((state: AppState) => state.resData);
-  const { loadingData } = useSelector((state: AppState) => state.srchCtl);
+  const reduxDispatch = useAppDispatch();
+  const reqData = useAppSelector((state: RootState) => state.reqData);
+  const resData = useAppSelector((state: RootState) => state.resData);
+  const { loadingData } = useAppSelector((state: RootState) => state.srchCtl);
   const [sorted, setSorted] = useState<Array<JSX.Element>>([]);
 
   useEffect(() => {

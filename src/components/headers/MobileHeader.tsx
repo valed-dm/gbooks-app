@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { useNavigate } from "react-router-dom";
-import { AppState } from "../../store/configureStore";
+import { RootState } from "../../store/store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faUndoAlt } from "@fortawesome/free-solid-svg-icons";
 import ReactModal from "react-modal";
@@ -10,9 +10,9 @@ import LoadMoreData from "../LoadMoreData";
 
 const MobileHeader: FC = () => {
   const navigate = useNavigate();
-  const reduxDispatch = useDispatch();
+  const reduxDispatch = useAppDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  const { allowExtraSearch } = useSelector((state: AppState) => state.srchCtl);
+  const { allowExtraSearch } = useAppSelector((state: RootState) => state.srchCtl);
 
   const backToMain = (e: React.MouseEvent<Element, MouseEvent>) => {
     navigate("/");

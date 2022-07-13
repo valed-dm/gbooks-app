@@ -1,8 +1,8 @@
 import { FC, useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../hooks/reduxHooks";
 import { useParams, useNavigate } from "react-router-dom";
 import { useWindowDimensions } from "../hooks/useWindowDimensions";
-import { AppState } from "../store/configureStore";
+import { RootState } from "../store/store";
 import { BookItem } from "../models/BookData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndoAlt } from "@fortawesome/free-solid-svg-icons";
@@ -13,8 +13,8 @@ const BookDetails: FC = () => {
   const { width } = useWindowDimensions();
   const [bookTitle, setBookTitle] = useState<string>();
   const [bookData, setBookData] = useState<JSX.Element>();
-  const resData = useSelector((state: AppState) => state.resData);
-  const sortData = useSelector((state: AppState) => state.sortData);
+  const resData = useAppSelector((state: RootState) => state.resData);
+  const sortData = useAppSelector((state: RootState) => state.sortData);
 
   useEffect(() => {
     let book: JSX.Element;
